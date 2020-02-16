@@ -2,11 +2,11 @@
 
 using namespace std;
 
-// Insert sort.
-// Commonly used in-place sorting algorithm.
-// Often used on small array size as addition to Merge Sort.
+// Insert sort
+// Commonly used in-place sorting algorithm
+// Often used on small array size as addition to Merge Sort
 // 
-// Complexity: O(n*n)
+// Complexity: O(n^2)
 // Memory:     O(1)
 void insertSort(vector<int> arr) {
     for (int i = 1; i < arr.size(); i++) {

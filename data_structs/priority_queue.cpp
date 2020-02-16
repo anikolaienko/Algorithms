@@ -1,9 +1,9 @@
 #include "./include/priority_queue.hpp"
 
-template<typename T>
+template<class T>
 PriorityQueue<T>::PriorityQueue() {}
 
-template<typename T>
+template<class T>
 PriorityQueue<T>::PriorityQueue(ForwardIterator<T> start, ForwardIterator<T> end) {
     arr = vector<T>(start, end);
     build_max_heap(arr);
@@ -13,7 +13,7 @@ PriorityQueue<T>::PriorityQueue(ForwardIterator<T> start, ForwardIterator<T> end
 //     i   - index of value we want to increase
 //     key - new value, should be > or == to old value by index `i`
 // Complexity: O(log(n))
-template<typename T>
+template<class T>
 void PriorityQueue<T>::increase_key(int i, T key) {
     if (i < 0 || i >= arr.size())
         throw std::overflow_error("Index i (" + to_string(i) + ") is outside the range of existing indexes.");
@@ -29,7 +29,7 @@ void PriorityQueue<T>::increase_key(int i, T key) {
 // Insert new value into queue
 //     x - new value to be inserted
 // Complexity O(log(n))
-template<typename T>
+template<class T>
 void PriorityQueue<T>::insert(T x) {
     arr.resize(arr.size() + 1);
     arr[arr.size() - 1] = x;
@@ -38,7 +38,7 @@ void PriorityQueue<T>::insert(T x) {
 
 // Pop value from the top of the queue
 // Complexity O(log(n))
-template<typename T>
+template<class T>
 T PriorityQueue<T>::pop() {
     if (arr.empty())
         throw std::underflow_error("Queue is empty");
@@ -55,7 +55,7 @@ T PriorityQueue<T>::pop() {
 
 // Peek the max value
 // Complexity O(1)
-template<typename T>
+template<class T>
 T PriorityQueue<T>::top() {
     return A[0];
 }

@@ -2,9 +2,9 @@
 
 using namespace std;
 
-// Merge sort.
-// Commonly used sorting algorithm.
-// Often used together with Insert Sort for small array size.
+// Merge sort
+// Commonly used sorting algorithm
+// Often used together with Insert Sort for small array size
 // 
 // Complexity: O(n*log(n))
 // Memory:     O(n*log(n))
