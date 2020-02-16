@@ -13,6 +13,9 @@ This is combination of Leetcode tasks solutions and algorithms from the book "In
     * Randomized quick sort
     * Quick sort with Hoare partitioning
 
+## Sort in linear time
+    * [Counting sort](/sort/count_sort.cpp) O(n + k)
+
 ## Bitwise
 Lots of information is available on this resource [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html).
 
