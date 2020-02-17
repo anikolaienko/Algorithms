@@ -2,8 +2,8 @@
 
 using namespace std;
 
-// Bubble sort - in-place sorting algorithm.
-// Rarely used in practice, because of low performance.
+// Bubble sort - in-place sorting algorithm
+// Rarely used in practice, because of low performance
 // 
 // Complexity: O(n**2)
 // Memory:     O(1)
