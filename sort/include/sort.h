@@ -1,6 +1,7 @@
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
+#include <string>
 
 #define left(i) i << 1
 #define right(i) (i << 1) | 1
@@ -22,3 +23,8 @@ void heapsort(std::vector<int>& A);
 //     r - end index to sort (inclusive)
 template <class T>
 void quick_sort(std::vector<T>& A, int p, int r);
+
+// Randomized partitioning
+// Used in Quick Sort and Quick Select algorithms
+template<class T>
+int partition_random(std::vector<T>& A, int p, int r);
