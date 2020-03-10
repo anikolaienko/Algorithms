@@ -1,4 +1,4 @@
-#include "../sort/include/sort.hpp"
+#include "../sort/include/sort"
 
 // Quick Select (Randomized Select) algorithm
 // Selects i-th smallest element in array

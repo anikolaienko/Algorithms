@@ -25,7 +25,7 @@ void Vector::push(int x)
 {
     if (size_ == cap_) {
         int* p = arr_;
-        cap <<= 1;
+        cap_ <<= 1;
         arr_ = new int[cap_]; // TODO: we still can run out of size_t bounds
         memcpy(arr_, p, size_ * sizeof(int));
         delete p;
@@ -36,7 +36,7 @@ void Vector::push(int x)
 int Vector::pop()
 {
     if (!size_)
-        throw new std::underflow_error('Popping value from empty vector.');
+        throw new std::underflow_error("Popping value from empty vector");
     // TODO: add size reduction
     return arr_[size_--];
 }
@@ -44,13 +44,13 @@ int Vector::pop()
 int& Vector::operator[] (int index)
 {
     if (index < 0 || index >= size_)
-        throw new std::overflow_error('Index is out of vector bounds.');
+        throw new std::overflow_error("Index is out of vector bounds");
     return arr_[index];
 }
 
 const int& Vector::operator[] (int index) const
 {
     if (index < 0 || index >= size_)
-        throw new std::overflow_error('Index is out of vector bounds.');
+        throw new std::overflow_error("Index is out of vector bounds");
     return arr_[index];
 }

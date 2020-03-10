@@ -1,4 +1,4 @@
-#include "./include/sort.hpp"
+#include "./include/sort"
 
 // Counting sort
 // Not comparison sorting algorithm

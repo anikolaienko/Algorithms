@@ -3,7 +3,7 @@
 // Stack data structure
 //
 // Since Vector class is implemented with all needed for Stack
-// Stack is basically an adapter over Vector
+// Stack is basically an wrapper (Adapter) over Vector
 //
 class Stack {
     Vector vect_*;

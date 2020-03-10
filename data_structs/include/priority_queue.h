@@ -1,4 +1,4 @@
-#include "../../sort/include/sort.hpp"
+#include "../../sort/include/sort"
 #include <stdexcept>
 #include <iterator>
 

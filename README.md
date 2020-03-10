@@ -2,7 +2,10 @@ This is algorithms implementations from the book "Introduction to Algorithms, 3r
 Also I put here some tasks solutions I've met on Leetcode, DailyCodingTask and other platforms.
 
 ## Data Structures
-* [Priority Queue](/data_structs/priority_queue.cpp)
+* [Vector](/data_structs/include/vector.h)
+* [Queue](/data_structs/include/queue.h)
+* [Stack](/data_structs/include/stack.h)
+* [Priority Queue](/data_structs/include/priority_queue.h)
 
 ## Sort
 * [Bubble sort](/sort/bubble_sort.cpp) O(n<sup>2</sup>)
@@ -16,6 +19,14 @@ Also I put here some tasks solutions I've met on Leetcode, DailyCodingTask and o
 
 ## Sort in linear time
 * [Counting sort](/sort/count_sort.cpp) O(n + k)
+
+## Select
+* Linear Select
+* MinMax
+* Quick Select
+
+## Graph Algorithms
+* Union Find
 
 ## Bitwise
 Lots of information is available on this resource [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html).

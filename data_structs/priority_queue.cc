@@ -1,4 +1,4 @@
-#include "./include/priority_queue.hpp"
+#include "./include/priority_queue"
 
 template<class T>
 PriorityQueue<T>::PriorityQueue() {}

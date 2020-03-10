@@ -1,4 +1,4 @@
-#include <ctype>
+#include <cctype>
 #include <cstring>
 #include <stdexcept>
 
@@ -24,4 +24,4 @@ public:
 
     int& operator[] (int);
     const int& operator[] (int) const;
-}
+};
