@@ -66,3 +66,5 @@ void quick_sort_random(std::vector<T>& A, int p, int r) {
         quick_sort_random(A, q + 1, r);
     }
 }
+
+// TODO: implement 3 way quick sort algorithm
