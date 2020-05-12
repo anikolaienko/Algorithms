@@ -1,4 +1,7 @@
 #include <vector>
+#include <stdexcept>
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -19,9 +22,18 @@ public:
 
     Graph(vector<pair<int,int>> edges) {
         for (auto& edge: edges) {
-            adj_[edge.first].push_back(edge.second);
-            adj_[edge.second].push_back(edge.first);
+            addEdge(edge.first, edge.second);
         }
+    }
+
+    void addEdge(int a, int b) {
+        int maxNode = max(a, b);
+        if (vCount_ < maxNode) {
+            vCount_ = maxNode;
+            adj_.resize(vCount_, vector<int> {});
+        }
+        adj_[a - 1].push_back(b - 1);
+        adj_[b - 1].push_back(a - 1);
     }
 
     int vCount() {
@@ -31,4 +43,15 @@ public:
     int eCount() {
         return eCount_;
     }
+
+    vector<int> adj(int v) {
+        if (v < 1 || v > vCount_)
+            throw invalid_argument("Vertex `v` is out of boundaries");
+        return adj_[v];
+    }
 };
+
+int main() {
+    vector<pair<int,int>> edges { make_pair(1,2), make_pair(2,3) };
+    Graph graph(edges);
+}
