@@ -10,7 +10,7 @@ int CutRodRecursive(vector<int> p, int n) {
     if (n == 0) return 0;
     int q = kMinInt;
     for (int i = 0; i <= n; ++i) {
-        q = max(q, p[i] + CutRod(p, n - 1));
+        q = max(q, p[i] + CutRodRecursive(p, n - 1));
     }
     return q;
 }
