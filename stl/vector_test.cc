@@ -104,13 +104,42 @@ void iterator_test() {
     cout << "Iterator value: " << (*it) << endl;
 }
 
+/**
+ * Testing if end iterator changes
+ * with push/pop operations
+ */
+void test_end_changes() {
+    vector<int> v1 { 20, 30, 40 };
+    auto v1Begin = v1.begin();
+    auto v1End = v1.end();
+    cout << "Begin iterator: " << &(*v1Begin) << " End iterator: " << &(*v1End) << endl;
+    for (int i: {1, 2, 3, 4, 5, 6, 7, 8, 9}) v1.push_back(i);
+    
+    v1Begin = v1.begin();
+    v1End = v1.end();
+    cout << "Begin iterator: " << &(*v1Begin) << " End iterator: " << &(*v1End) << endl;
+}
+
+/**
+ * Testing if sort throws exception
+ * Sort doesn't throw exception on vector
+ */
+void test_sort() {
+    vector<int> v1;
+    sort(v1.begin(), v1.end());
+}
+
 int main() {
     // iterator_test();
     // insert_test();
     // swap_test();
     // bool_vector_test();
-    vector<int> v { 1, 2, 3 };
-    display(v, "Initial");
-    pass_copy(v);
-    display(v, "After");
+
+    // vector<int> v { 1, 2, 3 };
+    // display(v, "Initial");
+    // pass_copy(v);
+    // display(v, "After");
+
+    // test_end_changes();
+    test_sort();
 }
