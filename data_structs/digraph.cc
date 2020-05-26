@@ -1,30 +1,27 @@
+#include <queue>
+#include <stack>
 #include <vector>
-#include <stdexcept>
-#include <iostream>
+#include <string>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-/**
- * The graph represented here is Adjacency list Graph taken from
- * "Algorithms" 4th edition (R. Sedgewick, K. Wayne)
- * 
- */
-class Graph {
+class Digraph {
     int v_;
     int e_;
-    vector<vector<int>> adj_; // adjacency list
+    vector<vector<int>> adj_;
 
 public:
-    Graph(int v) : v_{v}, e_(0) {
-        adj_.assign(v, vector<int> {});
+    Digraph(int v): v_{v} {
+        adj_.resize(v);
     }
 
-    Graph(vector<pair<int,int>> edges) {
+    Digraph(vector<pair<int, int>> edges) {
         for (auto& edge: edges) {
             addEdge(edge.first, edge.second);
         }
-    }
+    } 
 
     void addEdge(int a, int b) {
         // TODO: check if edge doesn't exist already
@@ -34,8 +31,11 @@ public:
             adj_.resize(v_, vector<int> {});
         }
         adj_[a - 1].push_back(b - 1);
-        adj_[b - 1].push_back(a - 1);
         e_++;
+    }
+
+    void removeEdge(int a, int b) {
+        int maxNode = max(a, b);
     }
 
     int v() {
@@ -50,6 +50,16 @@ public:
         if (v < 1 || v > v_)
             throw invalid_argument("Vertex `v` is out of boundaries");
         return adj_[v];
+    }
+
+    Digraph reverse() {
+        Digraph revGraph(v_);
+        for (int i = 0; i < v_; ++i) {
+            for (int j = 0; j < adj_[i].size(); ++j) {
+                revGraph.addEdge(adj_[i][j], i);
+            }
+        }
+        return revGraph;
     }
 
     string toString() {
@@ -68,8 +78,3 @@ public:
         return str;
     }
 };
-
-int main() {
-    vector<pair<int,int>> edges { make_pair(1,2), make_pair(2,3) };
-    Graph graph(edges);
-}
