@@ -25,8 +25,8 @@ string getMax() {
 }
 
 int main () {
-    cout << sizeof(int) << " limit: " << getMax<int>() << endl;
-    cout << sizeof(long) << " limit: " << getMax<long>() << endl;
-    cout << sizeof(long long) << " limit: " << getMax<long long>() << endl;
-    cout << sizeof(long long int) << " limit: " << getMax<long long int>() << endl;
+    cout << "int:           " << sizeof(int) << " limit: " << getMax<int>() << endl;
+    cout << "long:          " << sizeof(long) << " limit: " << getMax<long>() << endl;
+    cout << "long long:     " << sizeof(long long) << " limit: " << getMax<long long>() << endl;
+    cout << "long long int: " << sizeof(long long int) << " limit: " << getMax<long long int>() << endl;
 }
