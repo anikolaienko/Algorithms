@@ -10,16 +10,24 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 enable_testing()
 
-add_subdirectory(googletest)
+# add_subdirectory(googletest)
 
 set(Headers
-    Example.hpp
+    math/factorial.hh
 )
 
 set(Sources
-    Example.cpp
+    math/factorial.cc
 )
+
+include_directories(math/include)
 
 add_library(${This} STATIC ${Sources} ${Headers})
 
-add_subdirectory(test)
+set(ExName Permutations)
+
+set(ExSources
+    permutation/permutate_string.cc
+)
+
+add_executable(${ExName} ${ExSources})

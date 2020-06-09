@@ -33,4 +33,13 @@ Lots of information is available on this resource [Bit Twiddling Hacks](http://g
 
 * [Sum of two numbers without using "+/-" operations](/bitwise/sum_two_nums.cpp)
 
+## PROBLEMS
 
+Currently experiencing problem with compiling permutate_string.cc
+
+Looking into it. Here are commands to build factorial object file:
+```
+g++ -std=c++17 -fPIC -c -Wall -o math/factorial.o math/factorial.cc
+g++ -std=c++17 -fPIC -c -Wall -o math/factorial.so math/factorial.cc
+clang -std=c++17 -shared -undefined dynamic_lookup -o math/factorial.so math/factorial.cc
+```
