@@ -12,5 +12,6 @@ namespace Algorithms {
      */
     int getRightBit(int num);
 
-    std::string toBinString(int num);
+    template<int k>
+    std::string toBitString(int num);
 }

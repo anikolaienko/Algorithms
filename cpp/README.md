@@ -1,6 +1,6 @@
 # Exploring C++ language constructions
 
-Complile and run:
+Compile and run from root `Algorithms` folder:
 ```shell
-g++ -std=c++17 -o cpp/objects.o cpp/objects.cc; ./cpp/objects.o
+. run `cc_file_path`
 ```
