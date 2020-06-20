@@ -1,6 +1,8 @@
 #include <cstring>
 #include <string>
 
+// TODO: test
+
 class TrieNode
 {
 public:

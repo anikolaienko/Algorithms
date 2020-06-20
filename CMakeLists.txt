@@ -10,24 +10,20 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 enable_testing()
 
-# add_subdirectory(googletest)
-
-set(Headers
-    math/factorial.hh
-)
-
-set(Sources
-    math/factorial.cc
-)
+add_subdirectory(googletest)
 
 include_directories(math/include)
 
-add_library(${This} STATIC ${Sources} ${Headers})
-
-set(ExName Permutations)
-
+set(ExName permutate)
 set(ExSources
     permutation/permutate_string.cc
 )
 
-add_executable(${ExName} ${ExSources})
+add_library(${ExName} STATIC ${ExSources})
+
+find_library(MathLib math "math/lib")
+target_link_libraries(${ExName} ${MathLib})
+
+# set(CMAKE_VERBOSE_MAKEFILE ON)
+
+add_subdirectory(test)

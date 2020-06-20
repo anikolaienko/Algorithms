@@ -15,17 +15,17 @@
 
 using namespace std;
 
-vector<string> permutate(string& str);
-void permutate(vector<string>& result, string& str, string prefix);
+vector<string> permutate(const string& str);
+void permutate(vector<string>& result, const string& str, string prefix);
 
-vector<string> permutate(string& str) {
+vector<string> permutate(const string& str) {
     vector<string> result;
     permutate(result, str, "");
 
     return result;
 }
 
-void permutate(vector<string>& result, string& str, string prefix) {
+void permutate(vector<string>& result, const string& str, string prefix) {
     if (str.empty()) {
         result.push_back(prefix);
     } else {
@@ -67,18 +67,18 @@ bool isValid(string& original, vector<string> words) {
     return true;
 }
 
-int main() {
-    vector<string> tests { "hello", "wwordd", "appppt" };
+// int main() {
+//     vector<string> tests { "hello", "wwordd", "appppt" };
 
-    for (string& str: tests) {
-        cout << "Permutating: " + str << endl;
-        auto permutations = permutate(str);
-        for (string& permutation: permutations) {
-            cout << permutation << "  ";
-        }
-        cout << endl;
+//     for (string& str: tests) {
+//         cout << "Permutating: " + str << endl;
+//         auto permutations = permutate(str);
+//         for (string& permutation: permutations) {
+//             cout << permutation << "  ";
+//         }
+//         cout << endl;
         
-        if (!isValid(str, permutations)) cout << "ERROR!!! Permutations are not valid!";
-        cout << endl << endl;
-    }
-}
+//         if (!isValid(str, permutations)) cout << "ERROR!!! Permutations are not valid!";
+//         cout << endl << endl;
+//     }
+// }
