@@ -77,7 +77,7 @@ TEST(Stack3AsVector1, ResizeStack123) {
     stack3.push2(23);
     stack3.push2(24);
     EXPECT_EQ(stack3.size2(), 5);
-
+    
     for (int x: {32, 31, 30}) EXPECT_EQ(stack3.pop3(), x);
     for (int x: {24, 23, 22, 21, 20}) EXPECT_EQ(stack3.pop2(), x);
     for (int x: {14, 13, 12, 11, 10}) EXPECT_EQ(stack3.pop1(), x);
