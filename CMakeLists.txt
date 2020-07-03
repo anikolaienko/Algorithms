@@ -11,6 +11,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 enable_testing()
 
 add_subdirectory(googletest)
+add_subdirectory(data_structs)
 
 include_directories(math/include)
 

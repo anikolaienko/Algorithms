@@ -38,7 +38,6 @@ When cloning `Algorithms` repository run `. init_submodules` to get all dependen
 
 
 ## TODO
-
 * Organize libraries build into one folder and headers in another
 * Create unit tests
 

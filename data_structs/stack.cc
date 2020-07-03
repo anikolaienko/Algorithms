@@ -1,36 +1,38 @@
-#include "./include/stack"
+#include "stack.hh"
 
-Stack::Stack()
-{
-    vect_ = new Vector();
-}
+namespace Algorithms {
+    Stack::Stack()
+    {
+        vect_ = new Vector();
+    }
 
-Stack::Stack(const Stack& stack)
-{
-    vect_ = new Vector(*stack.vect_);
-}
+    Stack::Stack(const Stack& stack)
+    {
+        vect_ = new Vector(*stack.vect_);
+    }
 
-Stack::~Stack()
-{
-    delete vect_;
-}
+    Stack::~Stack()
+    {
+        delete vect_;
+    }
 
-void Stack::push(int x)
-{
-    vect_->push(x);
-}
+    void Stack::push(int x)
+    {
+        vect_->push(x);
+    }
 
-int Stack::pop()
-{
-    return vect_->pop();
-}
+    int Stack::pop()
+    {
+        return vect_->pop();
+    }
 
-int Stack::top()
-{
-    return vect_->top();
-}
+    int Stack::top()
+    {
+        return vect_->back();
+    }
 
-size_t Stack::size()
-{
-    return vect_->size();
+    size_t Stack::size()
+    {
+        return vect_->size();
+    }
 }
