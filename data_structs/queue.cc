@@ -2,7 +2,7 @@
 
 namespace Algorithms {
     Queue::Queue(): size_{0}, front_{0}, back_{0} {
-        vect_ = new Vector(2);
+        vect_ = new Vector();
     }
 
     Queue::Queue(const Queue& queue): front_{0}, back_{0} {
@@ -18,13 +18,14 @@ namespace Algorithms {
         if (size_ == vect_->capacity()) {
             Vector *newVect = new Vector(size_ * 2); // TODO: handle exception ??
             int i = front_;
+            int j = 0;
             while (true) {
-                newVect->push((*vect_)[i++]);
+                (*newVect)[j++] = (*vect_)[i++];
                 if (i >= vect_->size()) i = 0;
                 if (i == back_) break;
             }
             front_ = 0;
-            back_ = newVect->size();
+            back_ = j;
             
             // create new vect with double size, put all elements from old in order
             // and use new vect_ now

@@ -6,9 +6,9 @@ namespace Algorithms {
         arr_ = new int[2];
     }
 
-    Vector::Vector(size_t capacity): size_{0}, cap_{capacity}
+    Vector::Vector(size_t size): size_{size}, cap_{size}
     {
-        arr_ = new int[cap_];
+        arr_ = new int[size];
     }
 
     Vector::Vector(size_t size, int val): Vector::Vector(size * 2)
