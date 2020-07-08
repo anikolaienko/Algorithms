@@ -7,6 +7,7 @@ project(${This} C CXX)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+# set(CMAKE_VERBOSE_MAKEFILE ON)
 
 enable_testing()
 
@@ -14,6 +15,7 @@ add_subdirectory(googletest)
 add_subdirectory(data_structs)
 
 include_directories(math/include)
+include_directories(data_structs/include)
 
 set(ExName permutate)
 set(ExSources
@@ -22,9 +24,7 @@ set(ExSources
 
 add_library(${ExName} STATIC ${ExSources})
 
-find_library(MathLib math "math/lib")
+find_library(MathLib math "math/lib" NO_DEFAULT_PATH)
 target_link_libraries(${ExName} ${MathLib})
-
-# set(CMAKE_VERBOSE_MAKEFILE ON)
 
 add_subdirectory(test)

@@ -1,17 +1,23 @@
 #include "vector.hh"
 
 namespace Algorithms {
-    Vector::Vector() : size_(0), cap_(2)
+    Vector::Vector() : size_{0}, cap_{2}
     {
         arr_ = new int[2];
     }
 
-    Vector::Vector(int capacity): size_(0), cap_(capacity)
+    Vector::Vector(size_t capacity): size_{0}, cap_{capacity}
     {
-        arr_ = new int[capacity];
+        arr_ = new int[cap_];
     }
 
-    Vector::Vector(const Vector& vector): size_(vector.size_), cap_(vector.cap_)
+    Vector::Vector(size_t size, int val): Vector::Vector(size * 2)
+    {
+        for (int i = 0; i < size; ++i) arr_[i] = val;
+        size_ = size;
+    }
+
+    Vector::Vector(const Vector& vector): size_{vector.size_}, cap_{vector.cap_}
     {
         arr_ = new int[vector.cap_];
         memcpy(vector.arr_, arr_, vector.size_ * sizeof(int));
@@ -19,7 +25,7 @@ namespace Algorithms {
 
     Vector::~Vector()
     {
-        delete arr_;
+        delete [] arr_;
     }
 
     void Vector::push(int x)
@@ -53,17 +59,21 @@ namespace Algorithms {
         return size_;
     }
 
+    size_t Vector::capacity() {
+        return cap_;
+    }
+
     int& Vector::operator[] (int index)
     {
         if (index < 0 || index >= size_)
-            throw new std::overflow_error("Index is out of vector bounds");
+            throw std::overflow_error("Index is out of vector bounds");
         return arr_[index];
     }
 
     const int& Vector::operator[] (int index) const
     {
         if (index < 0 || index >= size_)
-            throw new std::overflow_error("Index is out of vector bounds");
+            throw std::overflow_error("Index is out of vector bounds");
         return arr_[index];
     }
 }

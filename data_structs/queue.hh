@@ -6,6 +6,7 @@
  */
 
 #include <cctype>
+#include <stdexcept>
 #include "vector.hh"
 
 #ifndef ALGORITHMS_QUEUE
@@ -14,6 +15,8 @@
 namespace Algorithms {
     class Queue {
         Vector *vect_;
+        int size_;
+        int front_, back_;
 
     public:
         Queue();

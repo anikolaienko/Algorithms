@@ -26,9 +26,9 @@ set(Sources
     vector.cc
 )
 
-add_library(datastructs SHARED ${Sources})
+add_library(DataStructsLib STATIC ${Sources})
 
 SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR})
 
-install(TARGETS datastructs DESTINATION lib)
+install(TARGETS DataStructsLib DESTINATION lib)
 install(FILES ${Headers} DESTINATION include)

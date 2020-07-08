@@ -14,7 +14,9 @@ namespace Algorithms {
     public:
         Vector();
 
-        Vector(int);
+        Vector(size_t);
+
+        Vector(size_t, int);
 
         Vector(const Vector&);
 
@@ -27,6 +29,8 @@ namespace Algorithms {
         int back();
 
         size_t size();
+
+        size_t capacity();
 
         int& operator[] (int);
         const int& operator[] (int) const;
