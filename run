@@ -1,6 +1,6 @@
 echo "Executing $1"
 
-g++ -std=c++17 -Lmath/lib -Imath/include -Ldata_structs/lib -Idata_structs/include -o out_tmp.o $1 math/lib/math.so data_structs/lib/libdatastructs.dylib
+g++ -std=c++17 -Lmath/lib -Imath/include -Ldata_structs/lib -Idata_structs/include -o out_tmp.o $1
 
 if [ $? -eq 0 ]
 then
