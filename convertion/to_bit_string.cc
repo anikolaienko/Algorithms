@@ -9,9 +9,7 @@ namespace Algorithms {
             uint64_t iValue;
         };
 
-        doubleInt di;
-        di.dValue = d;
-
+        doubleInt di {d};
         std::string result;
 
         for (int i = 0; i < 64; ++i) {
