@@ -18,6 +18,7 @@ namespace Algorithms {
             result.push_back('0' + (di.iValue & 1));
             di.iValue >>= 1;
         }
+        
         std::reverse(begin(result), end(result));
         return result;
     }
