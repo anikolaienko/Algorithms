@@ -14,6 +14,7 @@ set(Sources
     data_structs/vector_tests.cc
     data_structs/weighted_edge_tests.cc
     bitwise/bitwise_tests.cc
+    bitwise/swap_two_numbers_tests.cc
     permutation/permutate_string_tests.cc
     convertion/to_bit_string_tests.cc
 )
