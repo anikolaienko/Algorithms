@@ -13,10 +13,15 @@ set(Sources
     data_structs/queue_tests.cc
     data_structs/vector_tests.cc
     data_structs/weighted_edge_tests.cc
+    
     bitwise/bitwise_tests.cc
     bitwise/swap_two_numbers_tests.cc
+    
     permutation/permutate_string_tests.cc
+    
     convertion/to_bit_string_tests.cc
+
+    geometry/segments_intersection_tests.cc
 )
 
 add_executable(${This} ${Sources})
