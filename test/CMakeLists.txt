@@ -4,7 +4,6 @@ set(This AlgorithmsTests)
 
 SET(CMAKE_FIND_LIBRARY_PREFIXES lib)
 SET(CMAKE_FIND_LIBRARY_SUFFIXES .so .dylib)
-# SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(Sources
     # data_structs/stack3_as_vector1_tests.cc
@@ -23,14 +22,13 @@ set(Sources
 
     geometry/segments_intersection_tests.cc
 
-    # TODO: Figure out why it doesn't find correct mathlib version
-    # math/factorial_trailing_zeros_tests.cc 
+    math/factorial_trailing_zeros_tests.cc 
 )
 
 add_executable(${This} ${Sources})
 
-find_library(MathLib math "math/lib" NO_DEFAULT_PATH)
-find_library(DataStructsLib datastructs "data_structs/lib" NO_DEFAULT_PATH)
+find_library(MathLib math "${PROJECT_SOURCE_DIR}/math/lib" NO_DEFAULT_PATH)
+find_library(DataStructsLib datastructs "${PROJECT_SOURCE_DIR}/data_structs/lib" NO_DEFAULT_PATH)
 
 target_link_libraries(${This} PUBLIC
     gtest_main
