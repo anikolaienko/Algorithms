@@ -9,6 +9,8 @@ namespace Algorithms {
 
     /**
      * Returns number of trailing zeros in (n!)
+     * 
+     * Task 16.5 in Cracking Coding Interview
      */
     int factorialTrailingZeros(int n);
 }
