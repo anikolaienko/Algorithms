@@ -8,9 +8,14 @@ int Algorithms::factorial(int n) {
     else return n * factorial(n - 1);
 }
 
-// int main() {
-//     int nums[] {-2, 0, 1, 4, 5};
-//     for (int& num: nums) {
-//         std::cout << "Factorial of " << num << ": " << Algorithms::factorial(num) << std::endl;
-//     }
-// }
+int factorialTrailingZeros(int n) {
+    if (n <= 0) return 0;
+
+    int count = 0;
+    while (n >= 5) {
+        n /= 5;
+        count += n;
+    }
+
+    return count;
+}

@@ -18,7 +18,5 @@ set(Sources
 
 add_library(math SHARED ${Sources})
 
-SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR})
-
-install(TARGETS math DESTINATION lib)
-install(FILES ${Headers} DESTINATION include)
+install(TARGETS math DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+install(FILES ${Headers} DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/include")

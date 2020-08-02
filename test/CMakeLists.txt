@@ -22,6 +22,9 @@ set(Sources
     convertion/to_bit_string_tests.cc
 
     geometry/segments_intersection_tests.cc
+
+    # TODO: Figure out why it doesn't find correct mathlib version
+    # math/factorial_trailing_zeros_tests.cc 
 )
 
 add_executable(${This} ${Sources})

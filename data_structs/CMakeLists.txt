@@ -30,5 +30,5 @@ add_library(DataStructsLib STATIC ${Sources})
 
 SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR})
 
-install(TARGETS DataStructsLib DESTINATION lib)
-install(FILES ${Headers} DESTINATION include)
+install(TARGETS DataStructsLib DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+install(FILES ${Headers} DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/include")

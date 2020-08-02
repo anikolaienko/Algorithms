@@ -13,6 +13,7 @@ enable_testing()
 
 add_subdirectory(googletest)
 add_subdirectory(data_structs)
+add_subdirectory(math)
 
 include_directories(math/include)
 include_directories(data_structs/include)
