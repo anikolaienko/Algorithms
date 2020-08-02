@@ -2,7 +2,7 @@
 
 #include "../../data_structs/queue_as_stack.cc"
 
-TEST(Stack, AddPopItems) {
+TEST(QueueAsStack, AddPopItems) {
     Algorithms::QueueAsStack queue;
     for (int x: {1, 2, 3}) queue.push(x);
     EXPECT_EQ(queue.size(), 3);
@@ -12,7 +12,7 @@ TEST(Stack, AddPopItems) {
     EXPECT_EQ(queue.size(), 5);
     EXPECT_EQ(queue.front(), 1);
 
-    for (int x: {1, 2, 4, 4}) {
+    for (int x: {1, 2, 3, 4}) {
         EXPECT_EQ(queue.pop(), x);
     }
     

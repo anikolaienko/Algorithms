@@ -1,9 +1,15 @@
-#include <cctype>
-#include <cstring>
-#include <stdexcept>
+/**
+ * Vector data structure
+ * 
+ * Vector is a dynamicly sized array
+ */
 
 #ifndef ALGORITHMS_VECTOR
 #define ALGORITHMS_VECTOR
+
+#include <cctype>
+#include <cstring>
+#include <stdexcept>
 
 namespace Algorithms {
     class Vector {

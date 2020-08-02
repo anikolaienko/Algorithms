@@ -5,10 +5,10 @@
  * Stack is basically an wrapper (Adapter) over Vector.
  */
 
-#include "vector.hh"
-
 #ifndef ALGORITHMS_STACK
 #define ALGORITHMS_STACK
+
+#include "vector.hh"
 
 namespace Algorithms {
     class Stack {

@@ -5,12 +5,12 @@
  * Vector is used as cyclic array
  */
 
+#ifndef ALGORITHMS_QUEUE
+#define ALGORITHMS_QUEUE
+
 #include <cctype>
 #include <stdexcept>
 #include "vector.hh"
-
-#ifndef ALGORITHMS_QUEUE
-#define ALGORITHMS_QUEUE
 
 namespace Algorithms {
     class Queue {

@@ -1,5 +1,5 @@
 /**
- * Task from `Cracking coding interview`
+ * Task 3.1 from Cracking Coding Interview
  * 
  * We are going to use vector and extend it's size as stacks are growing
  */

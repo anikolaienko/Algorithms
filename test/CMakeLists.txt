@@ -6,8 +6,8 @@ SET(CMAKE_FIND_LIBRARY_PREFIXES lib)
 SET(CMAKE_FIND_LIBRARY_SUFFIXES .so .dylib)
 
 set(Sources
-    # data_structs/stack3_as_vector1_tests.cc
-    # data_structs/queue_as_stack_tests.cc
+    data_structs/stack3_as_vector1_tests.cc
+    data_structs/queue_as_stack_tests.cc
     data_structs/stack_tests.cc
     data_structs/queue_tests.cc
     data_structs/vector_tests.cc

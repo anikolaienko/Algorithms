@@ -1,4 +1,11 @@
-#include "stack.hh" // TODO: include `.hh` file instead
+/**
+ * Task 3.4 from Cracking Coding Interview
+ */
+
+#ifndef ALGORITHMS_QUEUE_AS_STACK
+#define ALGORITHMS_QUEUE_AS_STACK
+
+#include "stack.hh"
 
 namespace Algorithms {
     class QueueAsStack {
@@ -16,3 +23,5 @@ namespace Algorithms {
         int size();
     };
 }
+
+#endif // ALGORITHMS_QUEUE_AS_STACK

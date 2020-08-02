@@ -9,26 +9,22 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(Headers
-    # iterator.hh
-    # queue.hh
-    # queue_as_stack.hh
+    queue.hh
+    queue_as_stack.hh
     stack.hh
-    # stack3_as_vector1.hh
+    stack3_as_vector1.hh
     vector.hh
 )
 
 set(Sources
-    # iterator.cc
-    # queue.cc
-    # queue_as_stack.cc
+    queue.cc
+    queue_as_stack.cc
     stack.cc
-    # stack3_as_vector1.cc
+    stack3_as_vector1.cc
     vector.cc
 )
 
-add_library(DataStructsLib STATIC ${Sources})
+add_library(datastructs SHARED ${Sources})
 
-SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR})
-
-install(TARGETS DataStructsLib DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+install(TARGETS datastructs DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 install(FILES ${Headers} DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/include")
