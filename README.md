@@ -1,24 +1,40 @@
-This is algorithms implementations from the book "Introduction to Algorithms, 3rd Edition" (CLRS for short).
-Also I put here some tasks solutions I've met on Leetcode, DailyCodingTask and other platforms.
+# Algorithms
+I create this repository as part of my preparation to Coding Interviews in FAANG and other big companies.
+
+Code in this repository represents a collection of Data Structures and algorithms from different sources:
+* Leetcode
+* DailyCodingTask
+* Gayle L. McDowell "Cracking Coding Interview"
+* Robert Sedgewick, Kevin Wayne "Introduction to Algorithms, 3rd Edition" (CLRS for short)
+* Thomas Cormen and others "Introduction to Algorithms, 3rd Edition"
+* and other sources
+
+For contribution and other questions feel free to contact me by email [anikolaienko14@gmail.com](mailto:anikolaienko14@gmail.com)
+
+## Table of content
+* [Data Structures](#data-structures)
+* 
 
 ## Data Structures
-* [Vector](/data_structs/include/vector.h)
-* [Queue](/data_structs/include/queue.h)
-* [Stack](/data_structs/include/stack.h)
-* [Priority Queue](/data_structs/include/priority_queue.h)
+* [Vector](/data_structs/vector.hh)
+* [Queue](/data_structs/queue.hh)
+* [Stack](/data_structs/stack.hh)
+* [Priority Queue](/data_structs/priority_queue.hh)
+* [3 stacks as one vector](/data_structs/stack3_as_vector1.hh)
+* [Queue as stack](/data_structs/queue_as_stack.hh)
 
 ## Sort
-* [Bubble sort](/sort/bubble_sort.cpp) O(n<sup>2</sup>)
-* [Insert sort](/sort/insert_sort.cpp) O(n<sup>2</sup>)
-* [Heap sort](/sort/heap_sort.cpp) O(n log(n))
-* [Merge sort](/sort/merge_sort.cpp) O(n log(n))
-* [Quick sort](/sort/quick_sort.cpp) Average: O(n log(n)). Worst case: O(n<sup>2</sup>)
+* [Bubble sort](/sort/bubble_sort.cc) O(n<sup>2</sup>)
+* [Insert sort](/sort/insert_sort.cc) O(n<sup>2</sup>)
+* [Heap sort](/sort/heap_sort.cc) O(n log(n))
+* [Merge sort](/sort/merge_sort.cc) O(n log(n))
+* [Quick sort](/sort/quick_sort.cc) Average: O(n log(n)). Worst case: O(n<sup>2</sup>)
     * Quick sort
     * Randomized quick sort
     * Quick sort with Hoare partitioning
 
 ## Sort in linear time
-* [Counting sort](/sort/count_sort.cpp) O(n + k)
+* [Counting sort](/sort/count_sort.cc) O(n + k)
 
 ## Select
 * Linear Select
@@ -31,18 +47,13 @@ Also I put here some tasks solutions I've met on Leetcode, DailyCodingTask and o
 ## Bitwise
 Lots of information is available on this resource [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html).
 
-* [Sum of two numbers without using "+/-" operations](/bitwise/sum_two_nums.cpp)
+* [Sum of two numbers without using "+/-" operations](/bitwise/sum_two_nums.cc)
 
 ## RUN TESTS
 When cloning `Algorithms` repository run `. init_submodules` to get all dependencies.
 
-
-## TODO
-* Organize libraries build into one folder and headers in another
-* Create unit tests
-
-
 ## Can be useful
+* Commands for compiling shared library 
 ```
 g++ -std=c++17 -fPIC -c -Wall -o math/factorial.o math/factorial.cc
 
