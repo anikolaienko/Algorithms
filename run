@@ -1,13 +1,14 @@
 echo "Executing $1"
 
-g++ -arch x86_64            \
-    -std=c++17              \
-    -Wl,-rpath,./math/lib   \
-    -Imath/include          \
-    -Ldata_structs/lib      \
-    -Idata_structs/include  \
-    -o out_tmp.o $1         \
-    ./math/lib/libmath.dylib
+g++ -arch x86_64                                \
+    -std=c++17                                  \
+    -Wl,-rpath,./math/lib                       \
+    -Wl,-rpath,./data_structs/lib               \
+    -Imath/include                              \
+    -Idata_structs/include                      \
+    -o out_tmp.o $1                             \
+    ./math/lib/libmath.dylib                    \
+    ./data_structs/lib/libdatastructs.dylib
 
 if [ $? -eq 0 ]
 then

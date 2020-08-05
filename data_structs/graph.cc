@@ -1,75 +1,89 @@
-#include <vector>
-#include <stdexcept>
-#include <iostream>
-#include <algorithm>
+#include "graph.hh"
 
-using namespace std;
-
-/**
- * The graph represented here is Adjacency list Graph taken from
- * "Algorithms" 4th edition (R. Sedgewick, K. Wayne)
- * 
- */
-class Graph {
-    int v_;
-    int e_;
-    vector<vector<int>> adj_; // adjacency list
-
-public:
-    Graph(int v) : v_{v}, e_(0) {
-        adj_.assign(v, vector<int> {});
+namespace Algorithms {
+    Graph::Graph(int v) : v_{v}, e_{0} {
+        adj_.assign(v, std::vector<int> {});
     }
 
-    Graph(vector<pair<int,int>> edges) {
+    Graph::Graph(std::vector<std::pair<int,int>> edges) {
         for (auto& edge: edges) {
             addEdge(edge.first, edge.second);
         }
     }
 
-    void addEdge(int a, int b) {
-        // TODO: check if edge doesn't exist already
-        int maxNode = max(a, b);
-        if (v_ < maxNode) {
-            v_ = maxNode;
-            adj_.resize(v_, vector<int> {});
-        }
-        adj_[a - 1].push_back(b - 1);
-        adj_[b - 1].push_back(a - 1);
+    bool Graph::edgeExists(int a, int b) {
+        if (std::max(a, b) > v_) return false;
+
+        return any_of(begin(adj_[a]), end(adj_[a]), 
+            [b] (int other) { return other == b; }
+            );
+    }
+
+    void Graph::addVertexes(int num) {
+        v_ += num;
+        adj_.resize(v_, std::vector<int> {});
+    }
+
+    void Graph::addEdge(int a, int b) {
+        if (edgeExists(a, b)) return;
+
+        int maxNode = std::max(a, b);
+        if (maxNode >= v_) addVertexes(maxNode - v_ + 1);
+
+        adj_[a].push_back(b);
+        adj_[b].push_back(a);
         e_++;
     }
 
-    int v() {
+    bool Graph::connected(int a, int b) {
+        if (std::max(a, b) >= v_) throw std::invalid_argument("Vertex index is out of range");
+
+        std::vector<bool> visited(v_, false);
+        Stack stack;
+        stack.push(a);
+
+        while (stack.size()) {
+            int vertex = stack.pop();
+            visited[vertex] = true;
+
+            for (int other: adj_[vertex]) {
+                if (visited[other]) continue;
+                if (other == b) return true;
+                stack.push(other);
+            }
+        }
+
+        return false;
+    }
+
+    int Graph::v() {
         return v_;
     }
 
-    int e() {
+    int Graph::e() {
         return e_;
     }
 
-    vector<int> adj(int v) {
+    std::vector<int> Graph::adj(int v) {
         if (v < 1 || v > v_)
-            throw invalid_argument("Vertex `v` is out of boundaries");
+            throw std::invalid_argument("Vertex `v` is out of boundaries");
         return adj_[v];
     }
 
-    string toString() {
-        string str;
+    std::string Graph::toString() {
+        std::string str;
         for (int i = 0; i < v_; ++i) {
-            string row;
-            for (int j = 0; j < adj_[i].size(); ++j) {
-                str.append((row.size() ? ", " : "") + to_string(adj_[i][j]));
+            std::string row = std::to_string(i) + ": ";
+            if (adj_[i].size()) {
+                row = std::to_string(adj_[i][0]);
+                for (int j = 1; j < adj_[i].size(); ++j) {
+                    row.append(", " + std::to_string(adj_[i][j]));
+                }
             }
 
-            if (row.size()) {
-                if (str.size()) str.push_back('\n');
-                str.append(to_string(i) + ": " + row);
-            }
+            if (str.size()) str.push_back('\n');
+            str.append(std::to_string(i) + ": " + row);
         }
         return str;
     }
-};
-
-int main() {
-    vector<pair<int,int>> edges { make_pair(1,2), make_pair(2,3) };
-    Graph graph(edges);
 }

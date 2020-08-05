@@ -12,6 +12,7 @@ set(Sources
     data_structs/queue_tests.cc
     data_structs/vector_tests.cc
     data_structs/weighted_edge_tests.cc
+    data_structs/graph_tests.cc
     
     bitwise/bitwise_tests.cc
     bitwise/swap_two_numbers_tests.cc
