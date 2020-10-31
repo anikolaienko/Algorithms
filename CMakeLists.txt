@@ -17,6 +17,7 @@ include_directories(data_structs/include)
 add_subdirectory(googletest)
 add_subdirectory(data_structs)
 add_subdirectory(math)
+add_subdirectory(search)
 add_subdirectory(test)
 
 set(ExName permutate)

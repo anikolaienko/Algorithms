@@ -1,21 +1,29 @@
 # Algorithms
 I create this repository as part of my preparation to Coding Interviews in FAANG and other big companies.
 
+The idea is to learn/practice skills of implementing well-known data structures and algorithms from scratch.
+
+**Note:** We are not focusing much on supporting multiple data types in algorithms. This is not important part for Coding interviews and we are not building reusable library here.
+
 Code in this repository represents a collection of Data Structures and algorithms from different sources:
-* Leetcode
-* DailyCodingTask
 * Gayle L. McDowell "Cracking Coding Interview"
 * Robert Sedgewick, Kevin Wayne "Introduction to Algorithms, 3rd Edition" (CLRS for short)
 * Thomas Cormen and others "Introduction to Algorithms, 3rd Edition"
-* and other sources
+* Leetcode
+* DailyCodingTask
+* other sources
 
 For contribution and other questions feel free to contact me by email [anikolaienko14@gmail.com](mailto:anikolaienko14@gmail.com)
+
+## How to use this repository?
+
 
 ## Table of content
 * [Data Structures](#data-structures)
 * 
 
 ## Data Structures
+
 * [Vector](/data_structs/vector.hh)
 * [Queue](/data_structs/queue.hh)
 * [Stack](/data_structs/stack.hh)
@@ -28,7 +36,7 @@ For contribution and other questions feel free to contact me by email [anikolaie
 * [Insert sort](/sort/insert_sort.cc) O(n<sup>2</sup>)
 * [Heap sort](/sort/heap_sort.cc) O(n log(n))
 * [Merge sort](/sort/merge_sort.cc) O(n log(n))
-* [Quick sort](/sort/quick_sort.cc) Average: O(n log(n)). Worst case: O(n<sup>2</sup>)
+* [Quick sort](/sort/quick_sort.cc) Average: O(n log(n)). Worst: O(n<sup>2</sup>)
     * Quick sort
     * Randomized quick sort
     * Quick sort with Hoare partitioning
