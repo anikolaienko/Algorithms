@@ -6,6 +6,8 @@
 ## 16. Moderate
 * [16.1 NumberSwapper](bitwise/swap_two_numbers.cc)
 * 16.2 Word Frequencies
+    * [Simple version](search/word_counter_simple.cc)
+    * [Caching words for multiple count requests](search/word_counter_cached.cc))
 * [16.3 Intersection](geometry/segments_intersection.cc)
 * 16.4 Tic Tac Win
 * [16.5 Factorial Zeros](math/factorial.hh)

@@ -15,15 +15,19 @@ Code in this repository represents a collection of Data Structures and algorithm
 
 For contribution and other questions feel free to contact me by email [anikolaienko14@gmail.com](mailto:anikolaienko14@gmail.com)
 
-## How to use this repository?
-
-
 ## Table of content
+* [Other documents](#other-documents)
 * [Data Structures](#data-structures)
-* 
+* [Sort](#sort)
+* [Sort in linear time](#Sort-in-linear-time)
+* [Select](#select)
+* [Graph Algorithms](#graph-algorithms)
+* [Bitwise](#bitwise)
+
+## Other documents
+* [Solutions for Cracking The Coding Interview](/CTCI.md)
 
 ## Data Structures
-
 * [Vector](/data_structs/vector.hh)
 * [Queue](/data_structs/queue.hh)
 * [Stack](/data_structs/stack.hh)
