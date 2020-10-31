@@ -11,10 +11,12 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(Headers
     word_counter.hh
     word_counter_simple.hh
+    word_counter_cached.hh
 )
 
 set(Sources
     word_counter_simple.cc
+    word_counter_cached.cc
 )
 
 add_library(search SHARED ${Sources})

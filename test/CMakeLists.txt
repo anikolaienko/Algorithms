@@ -28,6 +28,7 @@ set(Sources
     math/factorial_trailing_zeros_tests.cc 
 
     search/word_counter_simple_tests.cc
+    search/word_counter_cached_tests.cc
 )
 
 add_executable(${This} ${Sources})
