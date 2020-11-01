@@ -51,7 +51,7 @@ void Algorithms::TicTacToe::checkBoard() {
             if (!isTaken(pos)) continue;
             taken++;
 
-            int point = board_ & (9 + pos) ? 1 : -1;
+            int point = board_ & (1 << (9 + pos)) ? 1 : -1;
             char sym = point > 0 ? 'x' : 'o';
 
             ver[i] += point;
@@ -82,6 +82,8 @@ bool Algorithms::TicTacToe::move(int x, int y, char symbol) {
     if (symbol != 'x' && symbol != 'o') {
         throw std::invalid_argument("Symbol is invalid: `" + std::string(1, symbol) + "`; allowed: x, o, X, O");
     }
+
+    if (is_finished()) return false;
 
     int pos = y * 3 + x;
     if (isTaken(pos)) return false;

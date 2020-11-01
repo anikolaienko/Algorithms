@@ -7,13 +7,15 @@ TEST(TicTacToeTest, InitializeEmptyBoard) {
     EXPECT_EQ(board.to_string(), "___\n"
                                  "___\n"
                                  "___");
+    EXPECT_FALSE(board.is_finished());
+    EXPECT_EQ(board.winner(), '_');
 }
 
 TEST(TicTacToeTest, InitializeBoard) {
     std::string str_board = "_x_\n"
                             "ox_\n"
                             "_ox";
-    EXPECT_EQ(board.to_string(), str_board);
+    Algorithms::TicTacToe board(str_board);
     EXPECT_FALSE(board.is_finished());
     EXPECT_EQ(board.winner(), '_');
     EXPECT_EQ(board.to_string(), str_board);
@@ -36,13 +38,15 @@ TEST(TicTacToeTest, InitializeBoardCaseInsensitive) {
     Algorithms::TicTacToe board(str_board);
     EXPECT_TRUE(board.is_finished());
     EXPECT_EQ(board.winner(), 'o');
-    EXPECT_EQ(board.to_string(), str_board);
+    EXPECT_EQ(board.to_string(), "ox_\n"
+                                 "xoo\n"
+                                 "_xo");
 }
 
 TEST(TicTacToeTest, InitializeBoardWithDraw) {
     std::string str_board = "oxo\n"
                             "xxo\n"
-                            "xoo";
+                            "xox";
     Algorithms::TicTacToe board(str_board);
     EXPECT_TRUE(board.is_finished());
     EXPECT_EQ(board.winner(), 'd');
