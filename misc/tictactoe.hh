@@ -7,8 +7,10 @@
 #ifndef ALGORITHMS_TICTACTOE_BOARD
 #define ALGORITHMS_TICTACTOE_BOARD
 
+#include <cmath>
 #include <string>
 #include <stdexcept>
+#include <cctype>
 
 namespace Algorithms{
     /**
@@ -18,8 +20,25 @@ namespace Algorithms{
      *  * if number of moves by each player is correct
      */
     class TicTacToe {
-        int board_;
+        const int BOARD_SIZE = 11;
 
+        /**
+         * Representation of the board
+         * First 9 bits show if certain cell is taken:
+         *  * 0 - free
+         *  * 1 - taken
+         * Second 9 bits show which symbol is in cell:
+         *  * 0 - o
+         *  * 1 - x
+         */
+        int board_ = 0;
+        char winner_ = '_';
+        bool finished_ = false;
+
+        bool isTaken(int pos);
+        void setTaken(int pos, char &c);
+        void setWinner(char symbol);
+        void checkBoard();
     public:
         /**
          * Initializes an empty board

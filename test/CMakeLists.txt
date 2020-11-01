@@ -29,6 +29,8 @@ set(Sources
 
     search/word_counter_simple_tests.cc
     search/word_counter_cached_tests.cc
+
+    misc/tictactoe_tests.cc
 )
 
 add_executable(${This} ${Sources})
@@ -36,12 +38,14 @@ add_executable(${This} ${Sources})
 find_library(MathLib math "${PROJECT_SOURCE_DIR}/math/lib" NO_DEFAULT_PATH)
 find_library(DataStructsLib datastructs "${PROJECT_SOURCE_DIR}/data_structs/lib" NO_DEFAULT_PATH)
 find_library(SearchLib search "${PROJECT_SOURCE_DIR}/search/lib" NO_DEFAULT_PATH)
+find_library(MiscLib misc "${PROJECT_SOURCE_DIR}/misc/lib" NO_DEFAULT_PATH)
 
 target_link_libraries(${This} PUBLIC
     gtest_main
     ${MathLib}
     ${DataStructsLib}
     ${SearchLib}
+    ${MiscLib}
 )
 
 add_test(
