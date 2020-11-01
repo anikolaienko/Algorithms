@@ -1,4 +1,4 @@
-#include "./include/sort"
+#include "./include/sort.hh"
 
 // Complexity O(log(n))
 void max_heapify(std::vector<int>& A, int& size, int i) {

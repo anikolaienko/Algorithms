@@ -1,4 +1,4 @@
-#include "./include/sort"
+#include "./include/sort.hh"
 
 // Rearanges subarray A[p..r] in place
 template <class T>

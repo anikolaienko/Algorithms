@@ -26,6 +26,7 @@ For contribution and other questions feel free to contact me by email [anikolaie
 
 ## Other documents
 * [Solutions for Cracking The Coding Interview](/CTCI.md)
+* [Initialize Google Test library](/Init_Submodules.md)
 
 ## Data Structures
 * [Vector](/data_structs/vector.hh)

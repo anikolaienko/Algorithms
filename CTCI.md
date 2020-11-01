@@ -9,7 +9,7 @@
     * [Simple version](search/word_counter_simple.cc)
     * [Caching words for multiple count requests](search/word_counter_cached.cc))
 * [16.3 Intersection](geometry/segments_intersection.cc)
-* 16.4 Tic Tac Win
+* [16.4 Tic Tac Win](misc/tictactoe.cc)
 * [16.5 Factorial Zeros](math/factorial.hh)
 * 16.6 Smallest Difference
 * 16.7 Number Max
